@@ -1,0 +1,28 @@
+<resources>
+    <!-- App title and fragment titles -->
+    <string name="app_name">KotlinMovieReviewApp</string>
+    <string name="movie_list_fragment">MovieListFragment</string>
+    <string name="movie_info_fragment">MovieInfoFragment</string>
+    <string name="add_review_fragment">AddReviewFragment</string>
+    <string name="maps_fragment">MapsFragment</string>
+
+    <string name="find_theater">영화관 찾기</string>
+
+    <string name="movie_poster">포스터</string>
+    <string name="movie_opening_date">개봉일</string>
+    <string name="movie_genre">장르</string>
+    <string name="movie_director">감독</string>
+    <string name="movie_actor">배우</string>
+    <string name="movie_show_time">상영시간</string>
+    <string name="movie_average_grade">평균평점</string>
+
+    <string name="movie_grade">평점</string>
+    <string name="movie_comment">평가</string>
+    <string name="movie_reviewer">평가자</string>
+
+    <string name="movie_evaluation">평가하기</string>
+    <string name="movie_back_to_list">목록보기</string>
+
+    <string name="google_maps_key">temp</string>
+
+</resources>

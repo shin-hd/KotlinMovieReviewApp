@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/tvMovieGrade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/tvMovieComment"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMovieComment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="추억이 새록새록"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/tvMovieReviewer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/tvMovieGrade"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvMovieReviewer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="청색"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvMovieComment"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

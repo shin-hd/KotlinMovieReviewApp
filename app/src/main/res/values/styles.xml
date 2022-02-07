@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Button Styles -->
+    <style name="normalButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/ok_gray_color</item>
+        <item name="colorControlHighlight">@color/selected_gray_color</item>
+        <item name="android:textColor">@color/white_text_color</item>
+        <item name="colorAccent">@color/selected_gray_color</item>
+    </style>
+
+</resources>

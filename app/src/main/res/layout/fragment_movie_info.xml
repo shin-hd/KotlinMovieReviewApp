@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movieInfoViewModel"
+            type="com.shinhaedam.kotlinmoviereviewapp.movieinfo.MovieInfoViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".movieinfo.MovieInfoFragment">
+
+        <ImageView
+            android:id="@+id/movie_poster"
+            android:layout_width="200dp"
+            android:layout_height="288dp"
+            android:contentDescription="@string/movie_poster"
+            android:src="@drawable/googleg_standard_color_18"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/movie_opening_date"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/movie_opening_date"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@string/movie_opening_date"
+            android:background="@color/selected_gray_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movie_poster"
+            app:layout_constraintEnd_toStartOf="@+id/movie_genre"
+            />
+
+        <TextView
+            android:id="@+id/movie_genre"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/movie_genre"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:background="@color/selected_gray_color"
+            app:layout_constraintStart_toEndOf="@+id/movie_opening_date"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <TextView
+            android:id="@+id/opening_date"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text=""
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/movie_opening_date"
+            app:layout_constraintStart_toEndOf="@+id/movie_poster"
+            app:layout_constraintEnd_toStartOf="@+id/genre"
+            />
+
+        <TextView
+            android:id="@+id/genre"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text=""
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/movie_genre"
+            app:layout_constraintStart_toEndOf="@+id/opening_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/movie_director"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@string/movie_director"
+            android:background="@color/selected_gray_color"
+            app:layout_constraintTop_toBottomOf="@+id/opening_date"
+            app:layout_constraintStart_toEndOf="@+id/movie_poster"
+            app:layout_constraintEnd_toStartOf="@+id/movie_actor"
+            />
+
+        <TextView
+            android:id="@+id/movie_actor"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/movie_actor"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:background="@color/selected_gray_color"
+            app:layout_constraintStart_toEndOf="@+id/movie_director"
+            app:layout_constraintTop_toBottomOf="@+id/genre"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <TextView
+            android:id="@+id/director"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text=""
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/movie_director"
+            app:layout_constraintStart_toEndOf="@+id/movie_poster"
+            app:layout_constraintEnd_toStartOf="@+id/actor"
+            />
+
+        <TextView
+            android:id="@+id/actor"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text=""
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/movie_actor"
+            app:layout_constraintStart_toEndOf="@+id/director"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/movie_show_time"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@string/movie_show_time"
+            android:background="@color/selected_gray_color"
+            app:layout_constraintTop_toBottomOf="@+id/director"
+            app:layout_constraintStart_toEndOf="@+id/movie_poster"
+            app:layout_constraintEnd_toStartOf="@+id/movie_average_grade"
+            />
+
+        <TextView
+            android:id="@+id/movie_average_grade"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/movie_average_grade"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:background="@color/selected_gray_color"
+            app:layout_constraintStart_toEndOf="@+id/movie_show_time"
+            app:layout_constraintTop_toBottomOf="@+id/actor"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/show_time"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text=""
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/movie_show_time"
+            app:layout_constraintStart_toEndOf="@+id/movie_poster"
+            app:layout_constraintEnd_toStartOf="@+id/average_grade"
+            />
+
+        <TextView
+            android:id="@+id/average_grade"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text=""
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/movie_average_grade"
+            app:layout_constraintStart_toEndOf="@+id/show_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/movie_grade"
+            android:layout_width="106dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/movie_grade"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:background="@color/selected_gray_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/average_grade"
+            app:layout_constraintEnd_toStartOf="@+id/movie_comment"
+            />
+
+        <TextView
+            android:id="@+id/movie_comment"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/movie_comment"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:background="@color/selected_gray_color"
+            app:layout_constraintStart_toEndOf="@+id/movie_grade"
+            app:layout_constraintTop_toBottomOf="@+id/average_grade"
+            app:layout_constraintEnd_toStartOf="@+id/movie_reviewer"
+            />
+
+        <TextView
+            android:id="@+id/movie_reviewer"
+            android:layout_width="106dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/movie_reviewer"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:background="@color/selected_gray_color"
+            app:layout_constraintStart_toEndOf="@+id/movie_comment"
+            app:layout_constraintTop_toBottomOf="@+id/average_grade"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/review_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/movie_grade"
+            app:layout_constraintBottom_toTopOf="@+id/btnEvaluation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_review_list"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+        <Button
+            android:id="@+id/btnEvaluation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:text="@string/movie_evaluation"
+            android:textAllCaps="false"
+            android:onClick="@{() -> movieInfoViewModel.onEvaluate()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnBackToList"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            />
+
+        <Button
+            android:id="@+id/btnBackToList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:text="@string/movie_back_to_list"
+            android:textAllCaps="false"
+            android:onClick="@{() -> movieInfoViewModel.onBackToList()}"
+            app:layout_constraintStart_toEndOf="@+id/btnEvaluation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
