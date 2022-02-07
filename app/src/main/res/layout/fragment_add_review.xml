@@ -25,16 +25,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--EditText
-            android:id="@+id/etReviewValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="평점"
-            app:layout_constraintBottom_toTopOf="@id/etReviewComment"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" /-->
-
         <EditText
             android:id="@+id/etReviewComment"
             android:layout_width="match_parent"

@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.shinhaedam.kotlinmoviereviewapp.MainActivity
 import com.shinhaedam.kotlinmoviereviewapp.R
 import com.shinhaedam.kotlinmoviereviewapp.database.MovieDatabase
 import com.shinhaedam.kotlinmoviereviewapp.database.Review

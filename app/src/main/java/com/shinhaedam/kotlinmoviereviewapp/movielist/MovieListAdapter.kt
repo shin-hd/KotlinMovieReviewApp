@@ -1,5 +1,6 @@
 package com.shinhaedam.kotlinmoviereviewapp.movielist
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,6 +38,15 @@ class MovieListAdapter: RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
             movieDate.text = item.openTime
             movieTitle.text = item.title
             movieGenre.text = item.genre
+
+            /**
+             * 홀수번째 리스트의 백그라운드 색 변경
+             */
+            if(item.movieId.toInt() % 2 == 1){
+                movieDate.setBackgroundColor(Color.parseColor("#e9ecef"))
+                movieTitle.setBackgroundColor(Color.parseColor("#e9ecef"))
+                movieGenre.setBackgroundColor(Color.parseColor("#e9ecef"))
+            }
 
             /**
              * 영화 리스트 클릭 시

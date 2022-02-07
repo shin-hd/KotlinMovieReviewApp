@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="ok_gray_color">#495057</color>
     <color name="selected_gray_color">#adb5bd</color>
+    <color name="week_gray_color">#e9ecef</color>
     <color name="white_text_color">#ffffff</color>
 
 </resources>

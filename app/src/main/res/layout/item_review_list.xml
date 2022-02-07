@@ -3,46 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_height="wrap_content" >
 
     <TextView
         android:id="@+id/tvMovieGrade"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="9"
+        android:layout_width="106dp"
+        android:layout_height="40dp"
+        android:text="@string/movie_grade"
         android:textSize="15sp"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/tvMovieComment"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="1"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvMovieComment"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvMovieComment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="추억이 새록새록"
+        android:layout_height="40dp"
+        android:text="@string/movie_comment"
         android:textSize="15sp"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/tvMovieReviewer"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="2"
+        android:gravity="center"
         app:layout_constraintStart_toEndOf="@+id/tvMovieGrade"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toStartOf="@+id/tvMovieReviewer"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvMovieReviewer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="청색"
+        android:layout_width="106dp"
+        android:layout_height="40dp"
+        android:text="@string/movie_reviewer"
         android:textSize="15sp"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="1"
+        android:gravity="center"
         app:layout_constraintStart_toEndOf="@+id/tvMovieComment"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

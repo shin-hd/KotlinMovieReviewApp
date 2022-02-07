@@ -8,6 +8,7 @@
 
     <string name="find_theater">영화관 찾기</string>
 
+    <string name="movie_title">영화 제목</string>
     <string name="movie_poster">포스터</string>
     <string name="movie_opening_date">개봉일</string>
     <string name="movie_genre">장르</string>

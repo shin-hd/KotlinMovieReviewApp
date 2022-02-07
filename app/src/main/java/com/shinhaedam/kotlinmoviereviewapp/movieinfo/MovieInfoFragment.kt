@@ -1,14 +1,17 @@
 package com.shinhaedam.kotlinmoviereviewapp.movieinfo
 
+import android.app.ActionBar
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.shinhaedam.kotlinmoviereviewapp.MainActivity
 import com.shinhaedam.kotlinmoviereviewapp.R
 import com.shinhaedam.kotlinmoviereviewapp.database.MovieDatabase
 import com.shinhaedam.kotlinmoviereviewapp.databinding.FragmentMovieInfoBinding
@@ -18,6 +21,9 @@ class MovieInfoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        // 메인 액티비티
+        val activity: MainActivity? = activity as MainActivity
 
         // 프래그먼트 바인딩
         val binding: FragmentMovieInfoBinding = DataBindingUtil.inflate(
@@ -49,11 +55,14 @@ class MovieInfoFragment : Fragment() {
          */
         movieInfoViewModel.movie.observe(viewLifecycleOwner, Observer {
             it?.let {
+                // 액션바 타이틀 설정
+                activity?.setActionBarTitle(it.movie.title)
+
                 // 어댑터 데이터에 리뷰 매핑
                 adapter.data = it.reviews
 
                 // 포스터 선택
-                when(it?.movie?.movieId) {
+                when(it.movie.movieId) {
                     1L -> binding.moviePoster.setImageResource(R.drawable.pirates)
                     2L -> binding.moviePoster.setImageResource(R.drawable.km)
                     3L -> binding.moviePoster.setImageResource(R.drawable.sp)
@@ -65,22 +74,20 @@ class MovieInfoFragment : Fragment() {
                 }
 
                 // 텍스트뷰 바인딩
-                binding.openingDate.text = it?.movie?.openTime.toString()
-                binding.genre.text = it?.movie?.genre.toString()
-                binding.director.text = it?.movie?.director.toString()
-                binding.actor.text = it?.movie?.actor.toString()
-                binding.showTime.text = it?.movie?.showTime.toString()
+                binding.openingDate.text = it.movie.openTime.toString()
+                binding.genre.text = it.movie.genre.toString()
+                binding.director.text = it.movie.director.toString()
+                binding.actor.text = it.movie.actor.toString()
+                binding.showTime.text = it.movie.showTime.toString()
 
                 // 리뷰들로부터 평균점수 계산
                 var averageGrade = 0;
-                val numOfReviews = it?.reviews?.size
-                if(numOfReviews != null) {
-                    for (i in 0 until numOfReviews)
-                        averageGrade += it?.reviews?.get(i).grade.toInt()
+                val numOfReviews = it.reviews.size
+                for (i in 0 until numOfReviews)
+                    averageGrade += it.reviews.get(i).grade.toInt()
 
-                    averageGrade /= numOfReviews
-                }
-                binding.averageGrade.text = averageGrade?.toString()
+                averageGrade /= numOfReviews
+                binding.averageGrade.text = averageGrade.toString()
             }
         })
 

@@ -1,5 +1,6 @@
 package com.shinhaedam.kotlinmoviereviewapp.movieinfo
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,6 +37,15 @@ class MovieInfoAdapter: RecyclerView.Adapter<MovieInfoAdapter.ViewHolder>() {
             movieGrade.text = item.grade.toString()
             movieComment.text = item.comment
             movieReviewer.text = item.reviewer
+
+            /**
+             * 홀수번째 리스트의 백그라운드 색 변경
+             */
+            if(item.reviewId.toInt() % 2 == 1){
+                movieGrade.setBackgroundColor(Color.parseColor("#e9ecef"))
+                movieComment.setBackgroundColor(Color.parseColor("#e9ecef"))
+                movieReviewer.setBackgroundColor(Color.parseColor("#e9ecef"))
+            }
         }
 
         companion object {

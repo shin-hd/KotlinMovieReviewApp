@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.shinhaedam.kotlinmoviereviewapp.MainActivity
 import com.shinhaedam.kotlinmoviereviewapp.R
 import com.shinhaedam.kotlinmoviereviewapp.database.MovieDatabase
 import com.shinhaedam.kotlinmoviereviewapp.databinding.FragmentMovieListBinding
@@ -16,6 +17,11 @@ import com.shinhaedam.kotlinmoviereviewapp.databinding.FragmentMovieListBinding
 class MovieListFragment:Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
+        // 메인 액티비티
+        val activity: MainActivity? = activity as MainActivity
+        // 액션바 타이틀 설정
+        activity?.setActionBarTitle("영화 목록")
 
         // 프래그먼트 바인딩
         val binding: FragmentMovieListBinding = DataBindingUtil.inflate(
