@@ -18,13 +18,9 @@ class MovieListViewModel(
     val movieList: LiveData<MutableList<Movie>> = database.list()
 
     /**
-     * 지도 프래그먼트로의 전환 플래그 [MapsFragment]
+     * 지도 프래그먼트로의 전환 플래그
      */
     private val _navigateToMaps = MutableLiveData<Boolean?>()
-
-    /**
-     * True면 [MapsFragment]로 이동, `doneNavigating()` 호출
-     */
     val navigateToMaps: LiveData<Boolean?>
         get() = _navigateToMaps
 

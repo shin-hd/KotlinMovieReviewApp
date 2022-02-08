@@ -21,7 +21,7 @@ class MovieInfoAdapter: RecyclerView.Adapter<MovieInfoAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
-        holder.bind(item)
+        holder.bind(item, position)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,15 +33,15 @@ class MovieInfoAdapter: RecyclerView.Adapter<MovieInfoAdapter.ViewHolder>() {
         val movieComment: TextView = itemView.findViewById(R.id.tvMovieComment)
         val movieReviewer: TextView = itemView.findViewById(R.id.tvMovieReviewer)
 
-        fun bind(item: Review) {
+        fun bind(item: Review, position: Int) {
             movieGrade.text = item.grade.toString()
             movieComment.text = item.comment
             movieReviewer.text = item.reviewer
 
             /**
-             * 홀수번째 리스트의 백그라운드 색 변경
+             * 리스트의 백그라운드 색 변경
              */
-            if(item.reviewId.toInt() % 2 == 1){
+            if(position % 2 == 1) {
                 movieGrade.setBackgroundColor(Color.parseColor("#e9ecef"))
                 movieComment.setBackgroundColor(Color.parseColor("#e9ecef"))
                 movieReviewer.setBackgroundColor(Color.parseColor("#e9ecef"))

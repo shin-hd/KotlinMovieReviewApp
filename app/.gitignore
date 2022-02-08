@@ -1,3 +1,4 @@
 /build
 /src/release
 /src/debug
+/src/main/res/values/google_maps_api.xml

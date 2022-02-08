@@ -1,9 +1,11 @@
 package com.shinhaedam.kotlinmoviereviewapp.movielist
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -18,9 +20,8 @@ class MovieListFragment:Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        // 메인 액티비티
-        val activity: MainActivity? = activity as MainActivity
         // 액션바 타이틀 설정
+        val activity: MainActivity = activity as MainActivity
         activity?.setActionBarTitle("영화 목록")
 
         // 프래그먼트 바인딩
@@ -42,6 +43,8 @@ class MovieListFragment:Fragment() {
         val adapter = MovieListAdapter()
         binding.movieList.adapter = adapter
 
+        binding.movieListViewModel = movieListViewModel
+
         /**
          * 네비게이트 플래그 옵저빙
          * 영화관 찾기 버튼 클릭
@@ -51,6 +54,7 @@ class MovieListFragment:Fragment() {
                 this.findNavController().navigate(
                     MovieListFragmentDirections
                         .actionMovieListFragmentToMapsFragment())
+
                 movieListViewModel.doneNavigating()
             }
         })
